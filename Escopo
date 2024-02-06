@@ -1,0 +1,7 @@
+Serão criadas 4 máquinas virtuais, cada uma com uma função específica:
+
+Máquina Virtual #1: TheHive
+Máquina Virtual #2: Gerente Wazuh
+Máquina Virtual #3: Shuffle
+Máquina Virtual #4: Windows 10 (com o agente do Wazuh)
+
