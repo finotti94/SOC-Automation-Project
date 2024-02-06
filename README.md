@@ -10,4 +10,3 @@ TheHive (https://thehive-project.org)
 Shuffle (https://shuffler.io)
 
 VirtualBox (https://www.virtualbox.org)
-## Início
