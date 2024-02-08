@@ -1,11 +1,15 @@
-Serão criadas 4 máquinas virtuais, cada uma com uma função específica:
+# PASSO #1 - CONFIGURAR MÁQUINAS VIRTUAIS
 
-Máquina Virtual #1: TheHive
-Máquina Virtual #2: Gerente Wazuh
-Máquina Virtual #3: Shuffle
-Máquina Virtual #4: Windows 10 (com o agente do Wazuh)
+Para este projeto, serão configuradas 3 máquinas virtuais:
 
-Fluxograma:
+1 para o Cliente Windows 10;
+1 para o Gerente Wazuh;
+1 para o TheHive.
 
-VM#4 irá enviar eventos para a VM#2
-VM#2 recebrá eventos, criará um alerta e enviará para a VM#3
+## 1.1 - LINK PARA AS IMAGENS DE SO
+
+Cliente Windows 10 /// Imagem do SO: [Windows](https://www.microsoft.com/en-ca/software-download/windows10)
+
+Wazuh /// Imagem do SO: [Ubuntu](https://ubuntu.com/download/desktop)
+
+TheHive /// Imagem do SO: [Ubuntu](https://ubuntu.com/download/desktop)
