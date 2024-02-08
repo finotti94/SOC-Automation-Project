@@ -13,21 +13,24 @@ Configurando e subindo uma Home Lab para um projeto de Automação de SOC (Secur
 
 ## Demonstração e Funcionamento
 
-![fluxograma copy](https://github.com/finotti94/SOC-Automation-Project/assets/7770279/5460545a-d906-4726-82ad-c1c5a8e22627)
+![fluxograma copy 2](https://github.com/finotti94/SOC-Automation-Project/assets/7770279/89918e45-a188-4dca-adce-ddda07162024)
 
 Serão criadas 4 máquinas virtuais, cada uma com uma função específica:
 
-Máquina Virtual #1: TheHive
+Máquina Virtual #1: Windows 10 (com o agente do Wazuh)
 
-Máquina Virtual #2: Gerente Wazuh
+Máquina Virtual #2: Gerente do Wazuh
 
 Máquina Virtual #3: Shuffle
 
-Máquina Virtual #4: Windows 10 (com o agente do Wazuh)
+Máquina Virtual #4: TheHive
 
 ![explicacao](https://github.com/finotti94/SOC-Automation-Project/assets/7770279/3d9ced65-fb53-47cd-a535-addb52bb08db)
 
 Fluxograma:
 
-VM#4 irá enviar eventos para a VM#2
-VM#2 recebrá eventos, criará um alerta e enviará para a VM#3
+- Máquina Windows 10 enviará eventos para o Gerente Wazuh;
+- Gerente Wazuh receberá os eventos, criará alertas e os enviará direto para o Shuffle;
+- O Shuffle, por sua vez, atuará como um OSINT (Open-Source Intelligence) para enriquecer o nosso IOC (Indicator of Compromise);
+- Assim que obtido informações da Internet, o Shuffle enviará alertas para o TheHive e irá disparar um e-mail para o analista SOC;
+- O analista SOC receberá o e-mail com o evento, respondendo com a tomada de decisão escolhida por ele, assim, dependendo da resposta, a ação será enviada para o Shuffle, depois para o Wazuh, e finalmente chegando ao cliente Windows, onde será executada a tomada de decisão
